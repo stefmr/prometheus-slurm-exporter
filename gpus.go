@@ -67,7 +67,7 @@ func ParseAllocatedGPUs() float64 {
 func ParseTotalGPUs() float64 {
 	var num_gpus = 0.0
 
-	args := []string{"-h", "-N", "--partition gpunode", "-o \"%G\""}
+	args := []string{"-h", "-N", "--partition", "gpunode", "-o", "%G"}
 	output := string(Execute("sinfo", args))
 
 	if len(output) > 0 {
